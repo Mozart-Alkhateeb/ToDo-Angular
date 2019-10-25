@@ -1,0 +1,23 @@
+<div class="container">
+    <form #form="ngForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+            <div class="col-8">
+                <input placeholder="Something todo" [(ngModel)]="todoModel.description" name="description"
+                    class="form-control" required />
+            </div>
+            <div class="col-2">
+                <select [(ngModel)]="todoModel.status" name="status" required>
+                    <option value="Pending">Pending</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Done">Done</option>
+                    <option value="Cancelled">Cancelled</option>
+                </select>
+            </div>
+            <div class="col-2">
+                <button type="submit" class="btn btn-primary  mb-2" [disabled]="!form.form.valid">Save Todo</button>
+            </div>
+        </div>
+    </form>
+    <br>
+    <a class="btn btn-primary" routerLink="/todo-list">
+        <<</a> </div>

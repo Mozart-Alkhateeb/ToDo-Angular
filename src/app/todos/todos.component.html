@@ -1,0 +1,12 @@
+<div style="text-align:center">
+    <h1>
+        {{ title }}
+    </h1>
+</div>
+<br>
+<div class="container">
+    <a class="btn btn-primary-outline oi oi-plus" [routerLink]="['/todo-list', 0]"></a>
+    <app-todo-item *ngFor="let todo of todos" [id]="todo.id" [status]="todo.status" [description]="todo.description" 
+    (deleteEvent)="onDelete($event)">
+    </app-todo-item>
+</div>
